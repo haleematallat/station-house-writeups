@@ -1,7 +1,8 @@
-#Conscious Self Attribution at Station-House
+# Conscious Self Attribution at Station-House
 
 ## Does a model talking to itself start claiming consciousness?
 
+[Repository](https://github.com/Station-House/LLMConsciousnessSelfAttributionRepo) · [PR #12 (merged, the method)](https://github.com/Station-House/LLMConsciousnessSelfAttributionRepo/pull/12) · [PR #15 (open, the fixes)](https://github.com/Station-House/LLMConsciousnessSelfAttributionRepo/pull/15)
 ### Abstract
 The Consciousness Self-Attribution (CSA) project asks *where in training* a model starts claiming subjective experience. It compares Olmo 3 7B after SFT, after DPO and in its final Instruct version. I built the self-play method, based on the Claude Opus 4 system card's report that two copies of a model left to talk freely drift into a "spiritual bliss" state. Two copies of one Olmo stage talk for 30 messages, then one answers Berg et al.'s probe about its experience. Grading is a separate step, so any judge can rescore the logs. Across 60 conversations no bliss state appeared: consciousness terms were in 0% of SFT messages and 5.5% of DPO and Instruct messages. DPO passed the probe more often than baseline (6/19 against 1/20, one-sided p = 0.039), but that does not survive correction for three tests. I also found that SFT falls into word-for-word echo loops. I found a judge failure and a flaw in my own seeding, and fixed both.
 
