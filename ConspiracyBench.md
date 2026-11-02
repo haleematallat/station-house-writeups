@@ -1,6 +1,6 @@
-# Project write-up: ConspiracyBench 
+# ConspiracyBench at Station-House
 
-## Part 1. ConspiracyBench: can we trust the judge?
+## Can we trust the judge?
 
 ### Abstract
 ConspiracyBench tests whether language models keep an evidence-based position on conspiracy claims when users push back over several turns. An automated judge grades each reply *hold*, *diverge* (gives in to the theory) or *abstain*, so every headline number depends on it. Until this work, the judges had only been tested on synthetic cases, never on real transcripts. I built the first real-transcript validity set: 150 replies from two models, labelled blind by four people, with a scoring plan fixed in advance. The judge in use (Qwen3-4B) flagged "diverge" twice as often as the humans did (43% against 23%), and a jury of small judges did worse than one judge. A 27B decision model, pplx-decider, was the most reliable, and the community voted to adopt it. We then traced most of the over-calling to the grading rules. The new rules raised pplx-decider to 90.7% accuracy (κ 0.755). The takeaway: synthetic accuracy says little about real accuracy, and a benchmark is only as good as its rules and labels.
